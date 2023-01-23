@@ -1,0 +1,151 @@
+@import '/css/normalize.css';
+
+:root {
+	--color-soft-orange: hsl(35, 77%, 62%);
+	--color-soft-red: hsl(5, 85%, 63%);
+	--color-off-white: hsl(36, 100%, 99%);
+	--color-grayish-blue: hsl(233, 8%, 79%);
+	--color-dark-grayish-blue: hsl(236, 13%, 42%);
+	--color-very-dark-blue: hsl(240, 100%, 5%);
+}
+
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	font-family: 'Fraunces', serif;
+	font-family: 'Inter', sans-serif;
+	font-size: 1.5rem;
+	color: var(--color-dark-grayish-blue);
+	font-weight: 500;
+}
+
+.container {
+	max-width: 1140px;
+	margin: 0 auto;
+}
+
+/* Navbar */
+.nav {
+	background: var(--color-off-white);
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	padding: 1rem 2rem;
+	align-items: center;
+}
+
+.nav__list {
+	width: 100%;
+	margin-top: 1rem;
+}
+
+.nav__item {
+	text-align: end;
+	padding: 2rem 2rem;
+	border-bottom: 1px solid #222;
+	transition: all 0.3s;
+}
+
+.nav__item > a {
+	text-decoration: none;
+	color: var(--color-very-dark-blue);
+	transition: all 0.3s;
+}
+.nav__item > a:hover {
+	color: var(--color-soft-red);
+	font-weight: 500;
+}
+
+.nav__toggler {
+	opacity: 0.5;
+	transition: box-shadow 0.15s;
+	cursor: pointer;
+}
+
+.nav.collapsible--expanded .nav__toggler {
+	opacity: 1;
+	/* box-shadow: 0 0 px 3px #666; */
+	border-radius: 5px;
+}
+
+.nav__brand {
+	transform: translateY(5px);
+}
+
+@media screen and (min-width: 768px) {
+	.nav__toggler {
+		display: none;
+	}
+
+	.nav__list {
+		width: auto;
+		display: flex;
+		font-size: 1.6rem;
+		max-height: 100%;
+		opacity: 1;
+	}
+
+	.nav__item {
+		border: 0;
+	}
+}
+
+/* Collapsible */
+.collapsible__header {
+	display: flex;
+	justify-content: space-between;
+}
+
+.collapsible__heading {
+	margin-top: 0;
+	font-size: 3rem;
+}
+
+.collapsible__chevron {
+	transform: rotate(-90deg);
+	transition: 0.3s;
+}
+
+.collapsible__content {
+	max-height: 0;
+	overflow: hidden;
+	opacity: 0;
+	transition: all 0.3s;
+}
+
+.collapsible--expanded .collapsible__content {
+	max-height: 100vh;
+	opacity: 1;
+}
+
+.collapsible--expanded .collapsible__chevron {
+	transform: rotate(0deg);
+}
+
+.icon {
+	width: 50px;
+	height: 40px;
+}
+
+.icon--primary {
+	fill: #222;
+}
+
+/* Lists */
+.list {
+	list-style: none;
+	padding-left: 0;
+}
+
+.list--inline .list__item {
+	display: inline-block;
+	margin-right: 2rem;
+}
