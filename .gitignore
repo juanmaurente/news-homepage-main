@@ -1,1 +1,9 @@
 base-file-news-homepage-main
+node_modules
+tests
+
+.babelrc
+jest.config.js
+
+package-lock.json
+package.json
