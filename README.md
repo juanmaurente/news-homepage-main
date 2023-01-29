@@ -1,10 +1,7 @@
 # news-homepage-main
 
+https://news-main-byjuan.netlify.app
 
-
-# Frontend Mentor - News homepage
-
-![Design preview for the News homepage coding challenge](./design/desktop-preview.jpg)
 
 ## Welcome! 👋
 
